@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42E4B0631E078D72001ABFBF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E4B0621E078D72001ABFBF /* main.swift */; };
+		42E4B0731E07AEC9001ABFBF /* NSData+pg_common_aes_crypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E4B0721E07AEC9001ABFBF /* NSData+pg_common_aes_crypt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		42E4B05F1E078D72001ABFBF /* cctool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = cctool; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E4B0621E078D72001ABFBF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		42E4B0711E07AEC9001ABFBF /* NSData+pg_common_aes_crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+pg_common_aes_crypt.h"; sourceTree = "<group>"; };
+		42E4B0721E07AEC9001ABFBF /* NSData+pg_common_aes_crypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+pg_common_aes_crypt.m"; sourceTree = "<group>"; };
+		42E4B0741E07AF44001ABFBF /* cctool-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cctool-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,20 @@
 		42E4B0611E078D72001ABFBF /* cctool */ = {
 			isa = PBXGroup;
 			children = (
+				42E4B0741E07AF44001ABFBF /* cctool-Bridging-Header.h */,
 				42E4B0621E078D72001ABFBF /* main.swift */,
+				42E4B0701E07AEC9001ABFBF /* ObjC */,
 			);
 			path = cctool;
+			sourceTree = "<group>";
+		};
+		42E4B0701E07AEC9001ABFBF /* ObjC */ = {
+			isa = PBXGroup;
+			children = (
+				42E4B0711E07AEC9001ABFBF /* NSData+pg_common_aes_crypt.h */,
+				42E4B0721E07AEC9001ABFBF /* NSData+pg_common_aes_crypt.m */,
+			);
+			path = ObjC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42E4B0631E078D72001ABFBF /* main.swift in Sources */,
+				42E4B0731E07AEC9001ABFBF /* NSData+pg_common_aes_crypt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +235,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cctool/cctool-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -227,6 +244,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cctool/cctool-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -250,6 +268,7 @@
 				42E4B0681E078D72001ABFBF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
