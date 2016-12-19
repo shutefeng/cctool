@@ -23,7 +23,8 @@ while(true) {
         let arrArgc = input?.components(separatedBy: "|")
         if arrArgc?.count == 2 {
             
-            let path = FileManager.default.currentDirectoryPath
+            let path = Bundle.main.bundlePath
+            print("path  =  \(path) ")
             let fileZip = path.appending("/booom.zip")
             if FileManager.default.fileExists(atPath: fileZip) {
                 
@@ -31,8 +32,10 @@ while(true) {
                 let newData = data?.c_common_Encrypt256(withPassword: arrArgc![1])
                 let newFileZip = path.appending("/booom.cas")
                 let url = URL.init(fileURLWithPath: newFileZip)
+                try? FileManager.default.removeItem(at: url)
                 try? newData?.write(to: url)
                 print("完成")
+                break
             }
             else {
             
@@ -49,7 +52,7 @@ while(true) {
         let arrArgc = input?.components(separatedBy: "|")
         if arrArgc?.count == 2 {
         
-            let path = FileManager.default.currentDirectoryPath
+            let path = Bundle.main.bundlePath
             let fileCas = path.appending("/booom.cas")
             if FileManager.default.fileExists(atPath: fileCas) {
                 
@@ -57,8 +60,10 @@ while(true) {
                 let newData = data?.c_common_Decrypt256(withPassword: arrArgc![1])
                 let newFileZip = path.appending("/booom1.zip")
                 let url = URL.init(fileURLWithPath: newFileZip)
+                try? FileManager.default.removeItem(at: url)
                 try? newData?.write(to: url)
                 print("完成")
+                break
             }
             else {
                 
